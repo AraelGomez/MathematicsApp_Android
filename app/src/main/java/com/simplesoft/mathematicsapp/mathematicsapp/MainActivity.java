@@ -1,3 +1,4 @@
+package com.simplesoft.mathematicsapp.mathematicsapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
@@ -10,7 +11,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
-
 public class MainActivity extends AppCompatActivity {
 
     DrawerLayout drawerLayout;
@@ -22,13 +22,12 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         actionBar = getSupportActionBar();
-        actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp);
-        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_menu_white_24dp); //Indicar que muestre menu hamburgusa
+        actionBar.setDisplayHomeAsUpEnabled(true); //Habilitar menu hamburguesa
 
         drawerLayout = (DrawerLayout) findViewById(R.id.navigation_drawer_layout);
 
@@ -65,22 +64,17 @@ public class MainActivity extends AppCompatActivity {
                     public boolean onNavigationItemSelected(MenuItem menuItem) {
                         textView = (TextView) findViewById(R.id.textView);
                         switch (menuItem.getItemId()) {
-                            case R.id.item_navigation_drawer_inbox:
+                            case R.id.ecuaciones_simultaneas:
+                                menuItem.setChecked(true);
+                                textView.setText(menuItem.getTitle()); //Aqui debemos utilizar un fragmento
+                                drawerLayout.closeDrawer(GravityCompat.START);
+                                return true;
+                            case R.id.determintes_matriz:
                                 menuItem.setChecked(true);
                                 textView.setText(menuItem.getTitle());
                                 drawerLayout.closeDrawer(GravityCompat.START);
                                 return true;
-                            case R.id.item_navigation_drawer_starred:
-                                menuItem.setChecked(true);
-                                textView.setText(menuItem.getTitle());
-                                drawerLayout.closeDrawer(GravityCompat.START);
-                                return true;
-                            case R.id.item_navigation_drawer_sent_mail:
-                                menuItem.setChecked(true);
-                                textView.setText(menuItem.getTitle());
-                                drawerLayout.closeDrawer(GravityCompat.START);
-                                return true;
-                            case R.id.item_navigation_drawer_drafts:
+                            case R.id.ecuacion_segundo_grado:
                                 menuItem.setChecked(true);
                                 textView.setText(menuItem.getTitle());
                                 drawerLayout.closeDrawer(GravityCompat.START);

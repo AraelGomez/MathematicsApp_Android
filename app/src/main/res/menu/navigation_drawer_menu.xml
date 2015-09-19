@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:checked="true"
+            android:id="@+id/ecuaciones_simultaneas"
+            android:icon="@drawable/ic_action_content_inbox"
+            android:title="Ecuaciones simultaneas" />
+        <item
+            android:id="@+id/determintes_matriz"
+            android:icon="@drawable/ic_action_content_inbox"
+            android:title="Determinante de una matriz" />
+        <item
+                android:id="@+id/ecuacion_segundo_grado"
+                 android:icon="@drawable/ic_action_content_inbox"
+                android:title="Ecuación de segundo grado" />
+        </group>
+
+    <item android:title="Configuraciones">
+        <menu>
+            <item
+                android:id="@+id/item_navigation_drawer_settings"
+                android:icon="@drawable/ic_action_settings"
+                android:title="Configuración" />
+            <item
+                android:id="@+id/item_navigation_drawer_help_and_feedback"
+                android:icon="@drawable/ic_action_content_inbox"
+                android:title="Ayuda" />
+        </menu>
+    </item>
+</menu>
